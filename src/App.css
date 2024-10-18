@@ -1,0 +1,63 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.satellite {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  background-color: rgb(228, 219, 219);
+  border-color: rgb(75, 92, 107);
+  border-style: dashed;
+}
+.satellite:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.satellite.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes satellite-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(1) .satellite {
+    animation: satellite-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.background {
+  background-image: url('C:\Users\ASUS\Documents\Projects2024-2025\gps-tracker\src\assets\galaxia.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.map-container {
+  width: 500px;
+  height: 400px;
+  border: 1px solid black;
+}
