@@ -12,7 +12,7 @@ const MapView = () => {
   useEffect(() => {
     const fetchCoordinates = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/coordinates`);
+        const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/coordinates`);
         const data = await response.json();
 
         if (data.latitude && data.longitude) {
@@ -20,8 +20,6 @@ const MapView = () => {
             ...currentMarkers,
             { lat: data.latitude, lng: data.longitude, title: "Nuevo Marcador" }
           ]);
-
-          console.log(data.latitude, data.longitude);
         }
 
       } catch (error) {
